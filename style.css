@@ -39,11 +39,11 @@ header {
 /* --- UPDATED: Logo Styling (Bigger & Rounded) --- */
 /* ------------------------------------ */
 .app-logo {
-    width:350px; /* Bigger size */
+    width:750px; /* Bigger size */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 150px;
+    height: 250px;
     object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
     
