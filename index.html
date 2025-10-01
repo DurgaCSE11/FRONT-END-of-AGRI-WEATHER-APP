@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri-Weather: Farmer's Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>🌱 Agri-Weather: Farmer's Production Assistant</h1>
+        <p>Your guide to optimal crop planning and government support.</p>
+    </header>
+
+    <div class="navbar">
+        <button class="nav-button" id="profile-nav">👤 Profile</button>
+        <button class="nav-button" id="weather-nav">☀️ Weather & Crop Guidance</button>
+        <button class="nav-button" id="schemes-nav">📜 Govt. Schemes</button>
+    </div>
+
+    <div class="container">
+        <div id="home-default" class="content-section">
+            <h2>Welcome to Agri-Weather!</h2>
+            <p>Please use the buttons above to manage your profile, view critical weather information, or check available government schemes.</p>
+            <p>Our goal is to help you make informed decisions for maximum crop yield and sustainability.</p>
+            
+        </div>
+
+        <div id="profile" class="content-section">
+            <h2>User Profile Access</h2>
+            <div class="profile-auth-container">
+                <button id="login-btn" class="auth-button">Login</button>
+                <button id="signup-btn" class="auth-button">Sign Up</button>
+            </div>
+
+            <form id="login-form" class="auth-form">
+                <h3>Login to Your Account</h3>
+                <label for="login-mobile">Mobile Number:</label>
+                <input type="tel" id="login-mobile" name="mobile" placeholder="Enter Mobile Number" required>
+                
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="password" placeholder="Enter Password" required>
+
+                <button type="submit" class="form-submit-btn">LOGIN</button>
+            </form>
+
+            <form id="signup-form" class="auth-form">
+                <h3>Create New Account</h3>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="number">Mobile Number:</label>
+                <input type="tel" id="number" name="number" required>
+                
+                <label for="signup-password">Create Password:</label>
+                <input type="password" id="signup-password" name="password" placeholder="Min 8 characters" required>
+                
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+                
+                <label for="location">State/District Location:</label>
+                <input type="text" id="location" name="location" required>
+                
+                <label for="scale">Scale of Farmer:</label>
+                <select id="scale" name="scale" required>
+                    <option value="">-- Select Scale --</option>
+                    <option value="small">Small (below 2 hectares)</option>
+                    <option value="medium">Medium (2 to 10 hectares)</option>
+                    <option value="large">Large (above 10 hectares)</option>
+                </select>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" pattern="\d{6}" title="Six digit pincode" required>
+
+                <button type="submit" class="form-submit-btn">SIGN UP</button>
+            </form>
+        </div>
+
+        <div id="weather" class="content-section">
+            <h2>☀️ Current Weather & Agricultural Advisory</h2>
+            <p style="font-style: italic; color: #555;">(Data is dynamically fetched based on user's registered location/selection)</p>
+            
+            <div class="weather-card main-info">
+                <h4>📍 Region: Nashik, Maharashtra</h4>
+                <p><strong>Date:</strong> 15 Oct 2025 | <strong>Last Updated:</strong> 10:00 AM</p>
+                <hr>
+                <p><strong>Soil Type:</strong> Black Cotton Soil (Regur)</p>
+                <p><strong>Ideal Crops:</strong> Grapes, Onion, Sugarcane, Wheat.</p>
+            </div>
+
+            <div class="weather-grid">
+                
+                <div class="weather-card">
+                    <h4>🌡️ Temperature</h4>
+                    <p><strong>Current:</strong> 28°C</p>
+                    <p><strong>Min/Max:</strong> 22°C / 32°C</p>
+                </div>
+                
+                <div class="weather-card">
+                    <h4>💧 Rain & Humidity</h4>
+                    <p><strong>Rain Forecast (24h):</strong> Low chance (10%)</p>
+                    <p><strong>Humidity:</strong> 65%</p>
+                </div>
+
+                <div class="weather-card">
+                    <h4>💨 Wind & Atmospheric</h4>
+                    <p><strong>Wind Speed:</strong> 12 km/h (Westerly)</p>
+                    <p><strong>Pressure:</strong> 1012 hPa</p>
+                </div>
+                
+                <div class="weather-card">
+                    <h4>⚠️ Alerts & Advisories</h4>
+                    <p class="alert-text"><strong>Cyclone/Storm Alert:</strong> NONE</p>
+                    <p><strong>Advisory:</strong> Continue regular irrigation. Prepare for possible evening drizzle.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="schemes" class="content-section">
+            <h2>📜 Government Schemes for Farmers</h2>
+            <p>Access information on central and state government schemes relevant to your farming profile.</p>
+            
+            <ul class="scheme-list">
+                <li class="scheme-item">
+                    <h3>Pradhan Mantri Fasal Bima Yojana (PMFBY)</h3>
+                    <p><strong>Focus:</strong> Crop Insurance. Provides financial support to farmers suffering crop loss/damage arising out of unforeseen events.</p>
+                    <p><strong>Eligibility:</strong> All farmers, including sharecroppers and tenant farmers, growing notified crops in the notified areas.</p>
+                </li>
+                <li class="scheme-item">
+                    <h3>Kisan Credit Card (KCC) Scheme</h3>
+                    <p><strong>Focus:</strong> Credit/Loan. Provides adequate and timely credit support to farmers for their cultivation needs.</p>
+                    <p><strong>Benefit:</strong> Short-term loans up to ₹3 lakhs at a subsidized interest rate.</p>
+                </li>
+                <li class="scheme-item">
+                    <h3>Paramparagat Krishi Vikas Yojana (PKVY)</h3>
+                    <p><strong>Focus:</strong> Organic Farming. Promotes organic farming through cluster approach and Participatory Guarantee System (PGS) certification.</p>
+                    <p><strong>Assistance:</strong> Financial assistance for organic input procurement, marketing, and training.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
