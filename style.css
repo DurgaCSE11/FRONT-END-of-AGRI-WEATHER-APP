@@ -12,9 +12,9 @@ body {
 #main-wrapper {
     max-width: 1400px; /* Wider than the container to allow side margins */
     margin: 0 auto; /* Center the wrapper */
-    background-color: rgb(240, 15, 15); /* Give it a white background */
-    min-height: 100vh; /* Ensure it covers the screen height */
-    margin-bottom: 40px;
+    background-color: rgb(255, 255, 255); /* Give it a white background */
+    min-height: 70vh; /* Ensure it covers the screen height */
+    margin-bottom: 20px;
 }
 
 header {
