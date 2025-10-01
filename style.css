@@ -43,7 +43,7 @@ header {
 .app-logo {
     max-width: 90px; /* Bigger size */
     height: auto;
-    border-radius: 50%; /* Makes the image perfectly circular */
+    
     object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
 }
