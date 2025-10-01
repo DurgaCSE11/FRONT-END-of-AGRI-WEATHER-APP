@@ -3,24 +3,34 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f7f6;
+    /* FIX: Set the main body background to green (matching the header) */
+    background-color: #28a745; 
     color: #333;
+}
+
+/* NEW: Style for the central white content block */
+#main-wrapper {
+    max-width: 1400px; /* Wider than the container to allow side margins */
+    margin: 0 auto; /* Center the wrapper */
+    background-color: white; /* Give it a white background */
+    min-height: 100vh; /* Ensure it covers the screen height */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Optional: Adds a soft shadow */
 }
 
 header {
     background-color: #28a745; /* Green for agriculture */
     color: white;
-    /* Updated for side-by-side layout */
-    display: flex; /* Enable Flexbox */
-    flex-direction: column; /* Stack H1 and P on top of logo/title container */
-    align-items: center; /* Center content horizontally */
+    /* Use Flexbox to stack the title container and the paragraph */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-title-container {
-    /* New container to hold logo and H1 side-by-side */
+    /* Container to hold logo and H1 side-by-side */
     display: flex;
     align-items: center; /* Vertically align items in the center */
     justify-content: center; /* Horizontally center the group */
@@ -28,26 +38,24 @@ header {
 }
 
 /* ------------------------------------ */
-/* --- NEW/UPDATED: Logo Styling --- */
+/* --- UPDATED: Logo Styling (Bigger & Rounded) --- */
 /* ------------------------------------ */
 .app-logo {
-    max-width: 150px; /* Increased size for side-by-side layout */
+    max-width: 90px; /* Bigger size */
     height: auto;
-    border-radius: 50%; /* Makes the image perfectly circular if it's square */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 50%; /* Makes the image perfectly circular */
+    object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
 }
 
 /* Adjust the H1 to sit right next to the logo */
 header h1 {
-    margin: 1; /* Remove default margin that could interfere with alignment */
-    font-size: 50px; /* Slightly larger title for prominence */
+    margin: 0; 
+    font-size: 2.2em; /* Bigger title */
 }
 
 header p {
-    margin-top: 2px; /* Add slight separation below the title */
-    margin-left: 200px;
-    font-size : 30px;
+    margin-top: 5px; /* Add slight separation below the title */
 }
 
 /* ------------------------------------ */
@@ -84,15 +92,13 @@ header p {
     padding: 40px;
     max-width: 1200px;
     margin: 20px auto;
-    background-color: white;
+    background-color: white; /* This will inherit white from #main-wrapper but is kept for clarity */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
     min-height: 60vh;
 }
 
-/* ------------------------------------ */
-/* --- CONTENT SECTIONS (No Change) --- */
-/* ------------------------------------ */
+/* --- Content Sections --- */
 .content-section {
     display: none; 
     padding: 20px;
