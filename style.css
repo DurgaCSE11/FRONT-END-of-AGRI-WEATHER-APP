@@ -45,6 +45,7 @@ header {
     height: auto;
     object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
+    zoom:150%;
 }
 .farmer {
    display: flex;
