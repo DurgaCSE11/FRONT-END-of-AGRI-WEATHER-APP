@@ -24,9 +24,8 @@ header {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .header-title-container {
@@ -41,14 +40,17 @@ header {
 /* --- UPDATED: Logo Styling (Bigger & Rounded) --- */
 /* ------------------------------------ */
 .app-logo {
-    max-width: 90px; /* Bigger size */
-    height: auto;
+    width:350px; /* Bigger size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
     object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
-    zoom:150%;
+    
 }
 .farmer {
-   display: flex;
+    display: flex;
     justify-content: center;
     background-color: #9bebae;
     padding: 10px 0; 
@@ -65,11 +67,13 @@ header {
 /* Adjust the H1 to sit right next to the logo */
 header h1 {
     margin: 0; 
-    font-size: 2.2em; /* Bigger title */
+    font-size: 2.7em; /* Bigger title */
 }
 
 header p {
-    margin-top: 5px; /* Add slight separation below the title */
+    margin-top: 1px; /* Add slight separation below the title */
+    margin-left: 60px;
+    font-size: 1.9em;
 }
 
 /* ------------------------------------ */
