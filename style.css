@@ -14,7 +14,6 @@ body {
     margin: 0 auto; /* Center the wrapper */
     background-color: white; /* Give it a white background */
     min-height: 100vh; /* Ensure it covers the screen height */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Optional: Adds a soft shadow */
 }
 
 header {
