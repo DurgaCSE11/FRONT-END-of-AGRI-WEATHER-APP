@@ -2,7 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 30px;
     /* FIX: Set the main body background to green (matching the header) */
     background-color: #28a745; 
     color: #333;
@@ -12,8 +12,9 @@ body {
 #main-wrapper {
     max-width: 1400px; /* Wider than the container to allow side margins */
     margin: 0 auto; /* Center the wrapper */
-    background-color: white; /* Give it a white background */
+    background-color: rgb(240, 15, 15); /* Give it a white background */
     min-height: 100vh; /* Ensure it covers the screen height */
+    margin-bottom: 40px;
 }
 
 header {
@@ -25,6 +26,7 @@ header {
     align-items: center; 
     padding: 10px 0;
     text-align: center;
+    margin-top: 40px;
 }
 
 .header-title-container {
@@ -33,6 +35,7 @@ header {
     align-items: center; /* Vertically align items in the center */
     justify-content: center; /* Horizontally center the group */
     gap: 15px; /* Space between logo and text */
+    margin-top: 10px;
 }
 
 /* ------------------------------------ */
@@ -43,7 +46,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 250px;
+    height: 310px;
     object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
     
