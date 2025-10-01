@@ -10,11 +10,49 @@ body {
 header {
     background-color: #28a745; /* Green for agriculture */
     color: white;
+    /* Updated for side-by-side layout */
+    display: flex; /* Enable Flexbox */
+    flex-direction: column; /* Stack H1 and P on top of logo/title container */
+    align-items: center; /* Center content horizontally */
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.header-title-container {
+    /* New container to hold logo and H1 side-by-side */
+    display: flex;
+    align-items: center; /* Vertically align items in the center */
+    justify-content: center; /* Horizontally center the group */
+    gap: 15px; /* Space between logo and text */
+}
+
+/* ------------------------------------ */
+/* --- NEW/UPDATED: Logo Styling --- */
+/* ------------------------------------ */
+.app-logo {
+    max-width: 150px; /* Increased size for side-by-side layout */
+    height: auto;
+    border-radius: 50%; /* Makes the image perfectly circular if it's square */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin: 0;
+}
+
+/* Adjust the H1 to sit right next to the logo */
+header h1 {
+    margin: 1; /* Remove default margin that could interfere with alignment */
+    font-size: 50px; /* Slightly larger title for prominence */
+}
+
+header p {
+    margin-top: 2px; /* Add slight separation below the title */
+    margin-left: 200px;
+    font-size : 30px;
+}
+
+/* ------------------------------------ */
+/* --- NAVIGATION STYLES (No Change) --- */
+/* ------------------------------------ */
 .navbar {
     display: flex;
     justify-content: center;
@@ -32,7 +70,7 @@ header {
     cursor: pointer;
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.1s;
-    flex: 1; /* Make buttons equally wide */
+    flex: 1; 
     max-width: 300px;
     font-weight: bold;
 }
@@ -52,9 +90,11 @@ header {
     min-height: 60vh;
 }
 
-/* --- Content Sections --- */
+/* ------------------------------------ */
+/* --- CONTENT SECTIONS (No Change) --- */
+/* ------------------------------------ */
 .content-section {
-    display: none; /* Hidden by default, controlled by JS */
+    display: none; 
     padding: 20px;
     border-top: 2px solid #ddd;
 }
@@ -91,7 +131,7 @@ header {
     max-width: 400px;
     margin-left: auto;
     margin-right: auto;
-    display: none; /* Hidden by default, controlled by JS */
+    display: none; 
 }
 
 .auth-form h3 {
@@ -144,7 +184,7 @@ header {
 }
 
 .weather-card {
-    background-color: #e6f7ff; /* Light blue for weather */
+    background-color: #e6f7ff; 
     border-left: 5px solid #007bff;
     padding: 20px;
     border-radius: 8px;
@@ -174,7 +214,7 @@ header {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    background-color: #f0f8f0; /* Very light green */
+    background-color: #f0f8f0; 
     transition: box-shadow 0.3s;
 }
 
