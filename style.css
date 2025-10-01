@@ -43,11 +43,24 @@ header {
 .app-logo {
     max-width: 90px; /* Bigger size */
     height: auto;
-    
     object-fit: cover; /* Ensures image fills the circular area */
     margin: 0;
 }
-
+.farmer {
+   display: flex;
+    justify-content: center;
+    background-color: #9bebae;
+    padding: 10px 0; 
+}
+.farmer-tablet {
+    width: 500px; /* Bigger size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    object-fit: cover; /* Ensures image fills the circular area */
+    margin: 0;
+}
 /* Adjust the H1 to sit right next to the logo */
 header h1 {
     margin: 0; 
