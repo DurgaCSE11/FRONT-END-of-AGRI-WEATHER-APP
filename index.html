@@ -25,13 +25,21 @@
         </header>
 
         <div class="navbar">
-            <button class="nav-button" id="profile-nav">👤 Profile</button>
-            <button class="nav-button" id="weather-nav">☀️ Weather</button>
-            <button class="nav-button" id="advisory-nav">🌿 AI Advisory</button>
-            <button class="nav-button" id="financials-nav">📊 Financials</button>
-            <button class="nav-button" id="market-nav">📈 Market Prices</button>
-            <button class="nav-button" id="schemes-nav">📜 Govt. Schemes</button>
-            <button class="nav-button" id="forum-nav">💬 Community</button>
+            <div class="menu-container">
+                <button class="menu-button" id="menu-toggle-btn">☰</button>
+                <div class="dropdown-content" id="nav-dropdown">
+                    <a href="#" class="nav-link" id="weather-nav">☀️ Weather</a>
+                    <a href="#" class="nav-link" id="advisory-nav">🌿 AI Advisory</a>
+                    <a href="#" class="nav-link" id="crop-manager-nav">👨‍🌾 Crop Manager</a>
+                    <a href="#" class="nav-link" id="financials-nav">📊 Financials</a>
+                    <a href="#" class="nav-link" id="market-nav">📈 Market Prices</a>
+                    <a href="#" class="nav-link" id="schemes-nav">📜 Govt. Schemes</a>
+                    <a href="#" class="nav-link" id="forum-nav">💬 Community</a>
+                </div>
+            </div>
+            <div class="profile-container">
+                <button class="nav-button" id="profile-nav">👤 Profile</button>
+            </div>
         </div>
 
         <div class="container">
@@ -99,43 +107,82 @@
 
             <div id="weather" class="content-section">
                 <h2>☀️ Current Weather & Agricultural Advisory</h2>
-                <p style="font-style: italic; color: #555;">(Data is dynamically fetched based on user's registered location/selection)</p>
+                
+                <div class="location-search">
+                    <label for="district-select">Select a District:</label>
+                    <select name="district" id="district-select">
+                        <option value="angul">Angul</option>
+                        <option value="balangir">Balangir</option>
+                        <option value="balasore">Balasore</option>
+                        <option value="bargarh">Bargarh</option>
+                        <option value="bhadrak">Bhadrak</option>
+                        <option value="boudh">Boudh</option>
+                        <option value="cuttack">Cuttack</option>
+                        <option value="deogarh">Deogarh</option>
+                        <option value="dhenkanal">Dhenkanal</option>
+                        <option value="gajapati">Gajapati</option>
+                        <option value="ganjam">Ganjam</option>
+                        <option value="jagatsinghpur">Jagatsinghpur</option>
+                        <option value="jajpur">Jajpur</option>
+                        <option value="jharsuguda">Jharsuguda</option>
+                        <option value="kalahandi">Kalahandi</option>
+                        <option value="kandhamal">Kandhamal</option>
+                        <option value="kendrapara">Kendrapara</option>
+                        <option value="keonjhar">Keonjhar</option>
+                        <option value="khordha" selected>Khordha (Bhubaneswar)</option>
+                        <option value="koraput">Koraput</option>
+                        <option value="malkangiri">Malkangiri</option>
+                        <option value="mayurbhanj">Mayurbhanj</option>
+                        <option value="nabarangpur">Nabarangpur</option>
+                        <option value="nayagarh">Nayagarh</option>
+                        <option value="nuapada">Nuapada</option>
+                        <option value="puri">Puri</option>
+                        <option value="rayagada">Rayagada</option>
+                        <option value="sambalpur">Sambalpur</option>
+                        <option value="subarnapur">Subarnapur (Sonepur)</option>
+                        <option value="sundargarh">Sundargarh</option>
+                    </select>
+                </div>
+
+                <p style="font-style: italic; color: #555;">(Select a district from the dropdown to see its specific weather and advisory.)</p>
                 
                 <div class="weather-card main-info">
-                    <h4>📍 Region: Nashik, Maharashtra</h4>
-                    <p><strong>Date:</strong> 15 Oct 2025 | <strong>Last Updated:</strong> 10:00 AM</p>
+                    <h4 id="weather-region">📍 Region: Khordha (Bhubaneswar), Odisha</h4>
+                    <p>
+                        <strong>Date:</strong> 03 Oct 2025 | 
+                        <strong>Last Updated:</strong> <span id="weather-last-updated">07:15 PM</span>
+                    </p>
                     <hr>
-                    <p><strong>Soil Type:</strong> Black Cotton Soil (Regur)</p>
-                    <p><strong>Ideal Crops:</strong> Grapes, Onion, Sugarcane, Wheat.</p>
+                    <p><strong>Soil Type:</strong> <span id="weather-soil-type">Laterite & Alluvial Soil</span></p>
+                    <p><strong>Ideal Crops:</strong> <span id="weather-ideal-crops">Rice, Vegetables, Mango, Coconut</span></p>
                 </div>
 
                 <div class="weather-grid">
                     <div class="weather-card">
                         <h4>🌡️ Temperature</h4>
-                        <p><strong>Current:</strong> 28°C</p>
-                        <p><strong>Min/Max:</strong> 22°C / 32°C</p>
+                        <p><strong>Current:</strong> <span id="weather-current-temp">26°C</span></p>
+                        <p><strong>Min/Max:</strong> <span id="weather-min-max-temp">24°C / 31°C</span></p>
                     </div>
                     
                     <div class="weather-card">
                         <h4>💧 Rain & Humidity</h4>
-                        <p><strong>Rain Forecast (24h):</strong> Low chance (10%)</p>
-                        <p><strong>Humidity:</strong> 65%</p>
+                        <p><strong>Rain Forecast (24h):</strong> <span id="weather-rain-forecast">High chance (70%)</span></p>
+                        <p><strong>Humidity:</strong> <span id="weather-humidity">85%</span></p>
                     </div>
 
                     <div class="weather-card">
                         <h4>💨 Wind & Atmospheric</h4>
-                        <p><strong>Wind Speed:</strong> 12 km/h (Westerly)</p>
-                        <p><strong>Pressure:</strong> 1012 hPa</p>
+                        <p><strong>Wind Speed:</strong> <span id="weather-wind-speed">10 km/h (Easterly)</span></p>
+                        <p><strong>Pressure:</strong> <span id="weather-pressure">1009 hPa</span></p>
                     </div>
                     
                     <div class="weather-card">
                         <h4>⚠️ Alerts & Advisories</h4>
-                        <p class="alert-text"><strong>Cyclone/Storm Alert:</strong> NONE</p>
-                        <p><strong>Advisory:</strong> Continue regular irrigation. Prepare for possible evening drizzle.</p>
+                        <p class="alert-text"><strong>Cyclone/Storm Alert:</strong> <span id="weather-alert">NONE</span></p>
+                        <p><strong>Advisory:</strong> <span id="weather-advisory">Likely thunderstorms tonight. Postpone irrigation. Ensure proper field drainage.</span></p>
                     </div>
                 </div>
             </div>
-            
             <div id="ai-advisory" class="content-section">
                 <h2>🌿 AI-Powered Crop Advisory</h2>
                 <form id="crop-advisory-form">
@@ -151,11 +198,161 @@
                 </div>
             </div>
 
+            <div id="crop-manager" class="content-section">
+                <h2>👨‍🌾 My Crop Manager</h2>
+                <p>Add the crops you are currently cultivating to get specific details and manage them effectively.</p>
+                
+                <div class="add-crop-container">
+                    <h3>Add a Crop to Your Manager</h3>
+                    <form id="add-crop-form">
+                        <label for="crop-manager-input">Crop Name:</label>
+                        <input type="text" id="crop-manager-input" list="crop-suggestions" placeholder="e.g., Rice, Tomato, Wheat..." required>
+                        <datalist id="crop-suggestions">
+                            <option value="Rice"></option>
+                            <option value="Wheat"></option>
+                            <option value="Tomato"></option>
+                            <option value="Potato"></option>
+                            <option value="Onion"></option>
+                            <option value="Sugarcane"></option>
+                        </datalist>
+                        <button type="submit" class="form-submit-btn">Add Crop</button>
+                    </form>
+                </div>
+
+                <div class="my-crops-list" id="my-crops-list">
+                    <div class="crop-card">
+                        <button class="remove-crop-btn">&times;</button>
+                        <h3>Rice (Paddy)</h3>
+                        <p><strong>💧 Watering Needs:</strong> Maintain a consistent water level of 2-5 cm in the paddy. Not based on times per day.</p>
+                        <p><strong>🌱 Fertilizer Needs:</strong> High in Nitrogen (Urea), Phosphorus (P), and Potassium (K). Apply in split doses.</p>
+                        <p><strong>🕒 Time to Harvest:</strong> Approximately 90-120 days from sowing, depending on the variety.</p>
+                    </div>
+
+                    <div class="crop-card">
+                        <button class="remove-crop-btn">&times;</button>
+                        <h3>Tomato</h3>
+                        <p><strong>💧 Watering Needs:</strong> Water 1-2 times a day, ensuring the soil is moist but not waterlogged. Avoid wetting the leaves.</p>
+                        <p><strong>🌱 Fertilizer Needs:</strong> Balanced NPK fertilizer initially, with higher Potassium during the fruiting stage.</p>
+                        <p><strong>🕒 Time to Harvest:</strong> Roughly 60-85 days after transplanting the seedlings.</p>
+                    </div>
+                    
+                    <div class="crop-card">
+                        <button class="remove-crop-btn">&times;</button>
+                        <h3>Wheat</h3>
+                        <p><strong>💧 Watering Needs:</strong> Requires irrigation every 20-25 days. Critical stages are crown root initiation and flowering.</p>
+                        <p><strong>🌱 Fertilizer Needs:</strong> A balanced mix of Nitrogen, Phosphorus, and Potassium is crucial for good yield.</p>
+                        <p><strong>🕒 Time to Harvest:</strong> Typically ready for harvest in 100-120 days.</p>
+                    </div>
+                </div>
+            </div>
+
             <div id="financials" class="content-section">
                 <h2>📊 Smart Financial Dashboard</h2>
+
+                <div class="financial-summary">
+                    <div class="summary-card">
+                        <h4>Total Income</h4>
+                        <p>₹ 1,50,000</p>
+                    </div>
+                    <div class="summary-card">
+                        <h4>Total Expenses</h4>
+                        <p>₹ 85,000</p>
+                    </div>
+                    <div class="summary-card profit">
+                        <h4>Net Profit</h4>
+                        <p>₹ 65,000</p>
+                    </div>
+                </div>
+
+                <div class="transaction-logger">
+                    <h3>Log a New Transaction</h3>
+                    <form id="transaction-form">
+                        <select id="transaction-type" required>
+                            <option value="" disabled selected>-- Select Type --</option>
+                            <option value="income">Income</option>
+                            <option value="expense">Expense</option>
+                        </select>
+                        <input type="text" id="transaction-desc" placeholder="Description (e.g., Seeds, Crop Sale)" required>
+                        <input type="number" id="transaction-amount" placeholder="Amount (₹)" required>
+                        <input type="date" id="transaction-date" required>
+                        <button type="submit" class="form-submit-btn">Add Transaction</button>
+                    </form>
+                </div>
+
+                <div class="transaction-history">
+                    <h3>Recent Transactions</h3>
+                    <table id="transactions-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Amount (₹)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2025-10-02</td>
+                                <td>Sale of Paddy (1 Quintal)</td>
+                                <td>Income</td>
+                                <td class="income-amount">+ ₹2,200</td>
+                            </tr>
+                            <tr>
+                                <td>2025-10-01</td>
+                                <td>Fertilizer Purchase</td>
+                                <td>Expense</td>
+                                <td class="expense-amount">- ₹1,500</td>
+                            </tr>
+                             <tr>
+                                <td>2025-09-28</td>
+                                <td>Labour Charges</td>
+                                <td>Expense</td>
+                                <td class="expense-amount">- ₹3,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <hr>
+
+                <h2>Financial Tools</h2>
+                <div class="financial-tools-container">
+                    <div class="profit-calculator">
+                        <h3>Quick Profit Calculator</h3>
+                        <form id="profit-calc-form">
+                            <label for="total-revenue">Total Revenue (₹):</label>
+                            <input type="number" id="total-revenue" placeholder="e.g., 50000" required>
+                            <label for="total-cost">Total Cost (₹):</label>
+                            <input type="number" id="total-cost" placeholder="e.g., 20000" required>
+                            <button type="submit" class="form-submit-btn">Calculate</button>
+                        </form>
+                        <div id="profit-result" class="result-box">
+                            <p>Your calculated profit will appear here.</p>
+                        </div>
+                    </div>
+
+                    <div class="emi-calculator">
+                        <h3>Loan EMI Calculator</h3>
+                        <form id="emi-calc-form">
+                            <label for="loan-amount">Loan Amount (₹):</label>
+                            <input type="number" id="loan-amount" placeholder="e.g., 100000" required>
+                            <label for="interest-rate">Annual Interest Rate (%):</label>
+                            <input type="number" id="interest-rate" placeholder="e.g., 7" step="0.1" required>
+                            <label for="loan-tenure">Loan Tenure (Years):</label>
+                            <input type="number" id="loan-tenure" placeholder="e.g., 5" required>
+                            <button type="submit" class="form-submit-btn">Calculate EMI</button>
+                        </form>
+                        <div id="emi-result" class="result-box">
+                            <p>Your monthly payment (EMI) will be calculated here.</p>
+                        </div>
+                    </div>
+                </div>
+                
                 <div id="financial-dashboard">
+                    <h3>Income vs Expense Chart</h3>
                     <canvas id="income-expense-chart"></canvas>
                 </div>
+
             </div>
 
             <div id="market-prices" class="content-section">
@@ -174,24 +371,24 @@
             </div>
 
             <div id="schemes" class="content-section">
-                <h2>📜 Government Schemes & Alerts</h2>
-                <p>Access information on central and state government schemes relevant to your farming profile.</p>
+                <h2>📜 Government Schemes & Alerts (Odisha)</h2>
+                <p>Access information on central and state government schemes relevant to your farming profile in Odisha.</p>
                 
                 <ul class="scheme-list">
                     <li class="scheme-item">
-                        <h3>Pradhan Mantri Fasal Bima Yojana (PMFBY)</h3>
-                        <p><strong>Focus:</strong> Crop Insurance. Provides financial support to farmers suffering crop loss/damage arising out of unforeseen events.</p>
-                        <p><strong>Eligibility:</strong> All farmers, including sharecroppers and tenant farmers, growing notified crops in the notified areas.</p>
+                        <h3>KALIA (Krushak Assistance for Livelihood and Income Augmentation)</h3>
+                        <p><strong>Focus:</strong> Direct financial support. Provides payments to small farmers, marginal farmers, and landless agricultural households for farm activities.</p>
+                        <p><strong>Benefit:</strong> Financial assistance of ₹12,500 for landless families and income support for cultivators for seeds, fertilizers, etc.</p>
                     </li>
                     <li class="scheme-item">
-                        <h3>Kisan Credit Card (KCC) Scheme</h3>
-                        <p><strong>Focus:</strong> Credit/Loan. Provides adequate and timely credit support to farmers for their cultivation needs.</p>
-                        <p><strong>Benefit:</strong> Short-term loans up to ₹3 lakhs at a subsidized interest rate.</p>
+                        <h3>Odisha Millets Mission (OMM)</h3>
+                        <p><strong>Focus:</strong> Crop Diversification & Nutrition. Promotes the cultivation, processing, and consumption of millets (like Ragi) to improve farmer income and nutrition.</p>
+                        <p><strong>Assistance:</strong> Provides incentives, technical support, and market linkages for millet farmers.</p>
                     </li>
                     <li class="scheme-item">
-                        <h3>Paramparagat Krishi Vikas Yojana (PKVY)</h3>
-                        <p><strong>Focus:</strong> Organic Farming. Promotes organic farming through cluster approach and Participatory Guarantee System (PGS) certification.</p>
-                        <p><strong>Assistance:</strong> Financial assistance for organic input procurement, marketing, and training.</p>
+                        <h3>Balaram Yojana</h3>
+                        <p><strong>Focus:</strong> Credit for Landless Farmers. Aims to provide agricultural credit to landless farmers through Joint Liability Groups (JLGs).</p>
+                        <p><strong>Benefit:</strong> Facilitates loans of up to ₹1.60 lakh per group, enabling access to credit without land collateral.</p>
                     </li>
                 </ul>
             </div>
