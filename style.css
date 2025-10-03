@@ -114,7 +114,7 @@ header p {
     margin: 20px auto;
     background-color: white; /* This will inherit white from #main-wrapper but is kept for clarity */
     border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    
     min-height: 60vh;
 }
 
@@ -255,4 +255,111 @@ header p {
 
 .scheme-item p {
     font-size: 15px;
+}
+
+
+/* ----------------------------------------------------------------- */
+/* --- NEW STYLES FOR ADDED FEATURES --- */
+/* ----------------------------------------------------------------- */
+
+/* --- AI Advisory Section --- */
+#crop-advisory-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#crop-advisory-form input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e7f3fe;
+    border-left: 6px solid #2196F3;
+    border-radius: 4px;
+}
+
+/* --- Financial Dashboard Section --- */
+#financial-dashboard {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* --- Market Prices Section --- */
+#prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#prices-table th, #prices-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+#prices-table thead {
+    background-color: #28a745;
+    color: white;
+}
+
+#prices-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* --- Community Forum Section --- */
+#forum-posts {
+    margin-bottom: 40px;
+}
+
+.post {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.post h3 {
+    color: #1e7e34;
+    margin-top: 0;
+}
+
+#add-post {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#add-post h3 {
+    margin-top: 0;
+}
+
+#new-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#new-post-form input, #new-post-form textarea {
+    width: 98%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#new-post-form textarea {
+    min-height: 100px;
+    resize: vertical;
 }

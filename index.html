@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agri-Weather: Farmer's Assistant</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -20,13 +21,17 @@
                 <p>Your guide to optimal crop planning and government support.</p>
                 </header>
             </div>
-           
+            
         </header>
 
         <div class="navbar">
             <button class="nav-button" id="profile-nav">👤 Profile</button>
-            <button class="nav-button" id="weather-nav">☀️ Weather & Crop Guidance</button>
+            <button class="nav-button" id="weather-nav">☀️ Weather</button>
+            <button class="nav-button" id="advisory-nav">🌿 AI Advisory</button>
+            <button class="nav-button" id="financials-nav">📊 Financials</button>
+            <button class="nav-button" id="market-nav">📈 Market Prices</button>
             <button class="nav-button" id="schemes-nav">📜 Govt. Schemes</button>
+            <button class="nav-button" id="forum-nav">💬 Community</button>
         </div>
 
         <div class="container">
@@ -34,10 +39,10 @@
                 <h2>Welcome to Agri-Weather!</h2>
                 <p>Please use the buttons above to manage your profile, view critical weather information, or check available government schemes.</p>
                 <p>Our goal is to help you make informed decisions for maximum crop yield and sustainability.</p>
-                 <div class="farmer">
-                 <img src="farmer.png" alt="Image of a farmer looking the app through tablet" class="farmer-tablet"></div>
+                <div class="farmer">
+                    <img src="farmer.png" alt="Image of a farmer looking the app through tablet" class="farmer-tablet">
+                </div>
             </div>
-            
             
             <div id="profile" class="content-section">
                 <h2>User Profile Access</h2>
@@ -105,7 +110,6 @@
                 </div>
 
                 <div class="weather-grid">
-                    
                     <div class="weather-card">
                         <h4>🌡️ Temperature</h4>
                         <p><strong>Current:</strong> 28°C</p>
@@ -131,9 +135,46 @@
                     </div>
                 </div>
             </div>
+            
+            <div id="ai-advisory" class="content-section">
+                <h2>🌿 AI-Powered Crop Advisory</h2>
+                <form id="crop-advisory-form">
+                    <input type="text" id="crop-name" placeholder="Enter Crop Name" required>
+                    <input type="text" id="soil-type" placeholder="Enter Soil Type" required>
+                    <input type="number" id="temperature" placeholder="Enter Temperature (°C)" required>
+                    <input type="number" id="humidity" placeholder="Enter Humidity (%)" required>
+                    <button type="submit" class="form-submit-btn">Get Advice</button>
+                </form>
+                <div id="advisory-result" class="result-box">
+                    <h3>Your Crop Advice:</h3>
+                    <p>Please fill out the form to get advice.</p>
+                </div>
+            </div>
+
+            <div id="financials" class="content-section">
+                <h2>📊 Smart Financial Dashboard</h2>
+                <div id="financial-dashboard">
+                    <canvas id="income-expense-chart"></canvas>
+                </div>
+            </div>
+
+            <div id="market-prices" class="content-section">
+                <h2>📈 Market Prices</h2>
+                <table id="prices-table">
+                    <thead>
+                        <tr>
+                            <th>Crop</th>
+                            <th>Price (per kg)</th>
+                            <th>Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
 
             <div id="schemes" class="content-section">
-                <h2>📜 Government Schemes for Farmers</h2>
+                <h2>📜 Government Schemes & Alerts</h2>
                 <p>Access information on central and state government schemes relevant to your farming profile.</p>
                 
                 <ul class="scheme-list">
@@ -154,8 +195,24 @@
                     </li>
                 </ul>
             </div>
+
+            <div id="forum" class="content-section">
+                <h2>💬 Community Forum</h2>
+                <div id="forum-posts">
+                    </div>
+                <div id="add-post">
+                    <h3>Add a New Post</h3>
+                    <form id="new-post-form">
+                        <input type="text" id="post-title" placeholder="Post Title" required>
+                        <textarea id="post-content" placeholder="What's on your mind?" required></textarea>
+                        <button type="submit" class="form-submit-btn">Post</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
 
-    </div> <script src="app.js"></script>
+    </div> 
+    <script src="app.js"></script>
 </body>
 </html>
